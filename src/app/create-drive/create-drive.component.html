@@ -1,0 +1,104 @@
+<html>
+<mat-card [ngStyle]="{'background-color':'pink'}">
+    <mat-card-title>Create Drive</mat-card-title>
+  <mat-card-content>
+  <form [formGroup]="createdrive" >
+  <p>
+      <mat-form-field appearance="legacy">
+        <mat-label>Company Name</mat-label>
+        <input matInput placeholder="Company Name"  formControlName="companyname">
+        <mat-error *ngIf="createdrive.get('companyname').errors?.required">Company name is required</mat-error>
+
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy">
+        <mat-label>No of Resources</mat-label>
+        <input matInput placeholder="No of Resources" formControlName="resources">
+        <mat-error *ngIf="createdrive.get('resources').errors?.required">Resources are required</mat-error>
+
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy">
+        <mat-label>Exp Required</mat-label>
+        <input matInput placeholder="Exp Required" formControlName="experience">
+        <mat-error *ngIf="createdrive.get('experience').errors?.required">experience required</mat-error>
+        
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy">
+        <mat-label>CTC</mat-label>
+        <input matInput placeholder="CTC" formControlName="ctc">
+        <mat-error *ngIf="createdrive.get('ctc').errors?.required">ctc required</mat-error>
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+    </p>
+    
+    <mat-form-field>
+      <mat-select placeholder="Joining Criteria" formControlName="joining">
+        <mat-option value="0">Internship</mat-option>
+        <mat-option value="1">Training & Joining</mat-option>
+        <mat-option value="2">Direct Joining</mat-option>
+  
+      </mat-select>
+      <mat-error *ngIf="createdrive.get('joining').errors?.required">joining required</mat-error>
+      <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+    </mat-form-field>
+  
+  
+    <p>
+      <mat-form-field appearance="legacy">
+        <mat-label>Bond</mat-label>
+        <input matInput placeholder="Bond" formControlName="bond">
+        <mat-error *ngIf="createdrive.get('bond').errors?.required">bond required</mat-error>
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+    </p>
+    
+  
+    <mat-form-field>
+      <mat-select placeholder="Position" formControlName="position">
+        <mat-option value="0">Software developer</mat-option>
+        <mat-option value="1">Tester</mat-option>
+        <mat-option value="2">Full Stack dev</mat-option>
+        <mat-option value="3">Data Administrator</mat-option>
+      </mat-select>
+      <mat-error *ngIf="createdrive.get('position').errors?.required">position required</mat-error>
+      <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+    </mat-form-field>
+  
+    <p>
+      <mat-form-field appearance="legacy">
+        <mat-label>FollowUp</mat-label>
+        <input matInput placeholder="FollowUp" formControlName="followup">
+        <mat-error *ngIf="createdrive.get('followup').errors?.required">follow up required</mat-error>
+      
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+    </p>
+    
+    <mat-form-field>
+      <mat-select placeholder="Education Criteria " formControlName="criteria">
+        <mat-option value="0">BE</mat-option>
+        <mat-option value="1">BCS</mat-option>
+        <mat-option value="2">BCOM</mat-option>
+        
+      </mat-select>
+      <mat-error *ngIf="createdrive.get('criteria').errors?.required">criteria is required</mat-error>
+      
+      <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+    </mat-form-field>
+  
+    <div class="button">
+      <button type="submit" mat-raised-button  (click)="adddata()"  color ="primary">Submit</button>
+    </div>
+  
+  </form>
+  </mat-card-content>
+  </mat-card>
+  
